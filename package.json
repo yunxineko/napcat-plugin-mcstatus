@@ -1,0 +1,41 @@
+{
+  "name": "napcat-plugin-mcstatus",
+  "plugin": "Minecraft 服务器状态图",
+  "version": "1.1.0",
+  "description": "关键词触发查询 Minecraft 服务器状态：支持 NapCat 插件 / OneBot 11 客户端两种模式，向 mcstatus-api 请求状态图并发送到 QQ",
+  "main": "index.mjs",
+  "type": "module",
+  "author": "yunxineko",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "test": "node --test test/logic.test.mjs test/engine.test.mjs",
+    "client": "node client.mjs"
+  },
+  "napcat": {
+    "tags": [
+      "工具",
+      "游戏"
+    ],
+    "minVersion": "4.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yunxineko/napcat-plugin-mcstatus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yunxineko/napcat-plugin-mcstatus/issues"
+  },
+  "homepage": "https://github.com/yunxineko/napcat-plugin-mcstatus#readme",
+  "keywords": [
+    "napcat",
+    "onebot",
+    "qqbot",
+    "minecraft",
+    "mcstatus",
+    "mc",
+    "koishi-plugin-mcstatus"
+  ]
+}

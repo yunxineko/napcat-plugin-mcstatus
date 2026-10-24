@@ -1,0 +1,12 @@
+# 本地实例配置（含真实服务器地址 / NapCat 令牌），不进仓库
+rules.json
+client.config.json
+
+# 依赖与日志
+node_modules/
+*.log
+
+# 编辑器 / 系统
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,21 @@
+{
+  // ===== 连接 NapCat 的 OneBot WebSocket 服务器 =====
+  // 用法：把本文件复制成 client.config.json 再改，真实配置不会进仓库
+  "websocketUrl": "ws://127.0.0.1:3001",
+  // NapCat 里设置的令牌，必须一致（走 ?access_token= 鉴权）
+  "accessToken": "",
+  // 断线后多少秒重连
+  "reconnectSeconds": 5,
+
+  // ===== 行为配置（与插件模式一致） =====
+  // mcstatus-api 地址（可自定义；rules.json 里单条规则也能用 apiBaseUrl 覆盖）
+  "apiBaseUrl": "http://127.0.0.1:3002",
+  // base64 = 本进程先请求图片再发送（失败会回复原因）；url = 交给 NapCat 拉取
+  "sendMode": "base64",
+  "requestTimeoutMs": 15000,
+  "cooldownSeconds": 5,
+  "allowPrivate": true,
+  "groupWhitelist": "",
+  "debug": false,
+  "enabled": true
+}

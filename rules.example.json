@@ -1,0 +1,60 @@
+{
+  // ==========================================================================
+  // 关键词规则：机器人收到关键词后，向 mcstatus-api 请求图片并发送到当前会话
+  //
+  // - 支持 // 行注释和尾随逗号，改完保存立即生效（热加载，无需重启）
+  // - 一条规则 = 一个（或多个）关键词 + 一组请求参数
+  // - 多条规则同时命中时，从上往下第一条生效
+  // - 每条规则可用 "apiBaseUrl" 单独指定 API 地址，不写则用插件配置里的全局地址
+  //
+  // 用法：把本文件复制成 rules.json 再改，rules.json 已在 .gitignore 里，不会被提交
+  // ==========================================================================
+  "rules": [
+    // ---------- 示例 1：单台服务器状态图（最常用） ----------
+    {
+      "keyword": ["状态", "mc"],
+      "endpoint": "banner",
+      "match": "exact",
+      "params": {
+        "host": "mc.example.com",
+        "port": 25565,
+        "name": "示例服",
+        "theme": "mono",
+        "style": "organic",
+        "layout": "split"
+      }
+    },
+
+    // ---------- 示例 2：查询串写法，附 queryPort 与单条规则的 API 地址 ----------
+    {
+      "keyword": ["生存服"],
+      "endpoint": "banner",
+      "match": "exact",
+      // 这条规则单独用别的 API 地址（不写则用全局配置）
+      // "apiBaseUrl": "http://127.0.0.1:3002",
+      "params": "?host=mc.example.com&port=25566&queryPort=25567&name=示例服 · 生存&theme=mono&layout=stack"
+    },
+
+    // ---------- 示例 3：多服一览图（servers 用逗号分隔，格式 显示名@host:port:queryPort） ----------
+    {
+      "keyword": ["服务器列表", "查服"],
+      "endpoint": "overview",
+      "match": "exact",
+      "params": {
+        "theme": "mono",
+        "style": "organic",
+        "layout": "stack",
+        "servers": "示例服 · 生存@mc.example.com:25565:25567,示例服 · 创造@mc.example.com:25575:25577"
+      }
+    },
+
+    // ---------- 示例 4：返回 JSON 文字（status = 单服，overview-json = 多服） ----------
+    {
+      "keyword": ["原文"],
+      "endpoint": "status",
+      "match": "exact",
+      "enabled": false,
+      "params": "?host=mc.example.com&port=25565"
+    }
+  ]
+}
