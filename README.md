@@ -1,6 +1,6 @@
 # napcat-plugin-mcstatus
 
-QQ 机器人收到**关键词**后，向 [mcstatus-api](../main/README.md) 请求 Minecraft 服务器状态图，并把图片发送到当前群 / 私聊。**每个关键词都可以自定义自己的请求参数**。
+QQ 机器人收到**关键词**后，向 [mcstatus-api](https://github.com/Plantrian/MCstatus) 请求 Minecraft 服务器状态图，并把图片发送到当前群 / 私聊。**每个关键词都可以自定义自己的请求参数**。
 
 支持两种运行方式，共用同一份 `rules.json` 与同一套处理逻辑：
 
